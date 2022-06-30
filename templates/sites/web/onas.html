@@ -1,0 +1,40 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+{% block content %}
+<section class="p-5" style="background-color:lightgrey;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="header-onas">Informacje o naszej firmie <span style="color: orange;">GSM</span>-Monit!</h2>
+            </div>
+            <div class="col-md-6 ">
+                <blockquote class="blockquote">
+                    <p class="o-nas"><span style="font-weight: bold;"><span style="color: orange;">GSM</span>-monit</span> działa na rynku od połowy 2010 roku.</p>
+                    <p class="o-nas">Nasza firma to zespół wykwalifikowanych i doświadczonych pracowników, którzy dzięki swej wiedzy i umiejętnościom efektywnie wykonują wszystkie zlecenia klientów.
+                        Jesteśmy wieloprofilową firmą z sektora IT, na szeroką skalę specjalizującą się w projektowaniu i wdrażaniu profesjonalnych systemów zabezpieczeń.
+                        Zapewniamy fachową obsługę zarówno różnego rodzaju firm czy instytucji, jak i klientów indywidualnych, dostosowując realizację każdego zamówienia do swoistych potrzeb oraz oczekiwań kontrahenta.</p>
+                </blockquote>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="col-6" style="transform: rotate(10deg)">
+                    <img class="img-fluid rounded-pill blur" src="{% static 'assets/img/onas/onas5.jpeg' %}">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="col-6 mb-4" style="transform: rotate(-10deg); ">
+                    <img class="img-fluid rounded-circle blur" src="{% static 'assets/img/onas/onas3.jpg' %}">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <blockquote class="blockquote">
+                <p class="o-nas">Zakres naszych działań obejmuje zarówno opracowywanie kompletnych systemów nadzorów obiektów, jak i dostarczanie poszczególnych elementów systemów. Sztab naszych ekspertów nieustannie dokłada wszelkich starań, aby poziom i jakość naszych usług sukcesywnie wzrastały.
+                    Za sprawą wieloletniego doświadczenia w branży elektrycznej, elektronicznej i informatycznej, dysponujemy wiedzą oraz umiejętnościami, które umożliwiają nam nie tylko tworzenie, ale i wdrażanie innowacyjnych rozwiązań, będących urzeczywistnieniem wymagań naszych klientów.
+                    Z chęcią i ogromną pasją podejmujemy wszelkiego typu wyzwania, które służą udoskonalaniu naszych działań.</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

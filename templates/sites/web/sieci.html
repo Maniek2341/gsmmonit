@@ -1,0 +1,25 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>INSTALACJE <span style="color:orange;">SIECIOWE</span></h2>
+            </div>
+            <div class="col-md-12">
+                <blockquote class="blockqouote">
+                    <p class="monit-font">Wykonujemy sieci komputerowe w mieszkaniach , domkach jednorodzinnych , oraz w szkołach i środowisku biurowym.</p>
+                    <p class="monit-font">Zlecenia wykonujemy kompleksowo, od zapewnienia własnej infrastruktury technicznej (okablowanie, switche, routery, access pointy). Każda realizacja jest przez nas skrupulatnie analizowana i indywidualnie projektowana.</p>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="row photos mt-4">
+            <div class="col-xs-6 col-md-4 item mb-4"><img class="img-fluid blur rounded" src="{% static 'assets/img/sieci/rack1.jpg' %}"></div>
+            <div class="col-xs-6 col-md-4 item mb-4"><img class="img-fluid blur rounded" src="{% static 'assets/img/sieci/rack2.jpg' %}"></div>
+            <div class="col-xs-6 col-md-4 item mb-4"><img class="img-fluid blur rounded" src="{% static 'assets/img/sieci/rack3.jpg' %}"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

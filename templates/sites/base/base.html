@@ -1,0 +1,294 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GSMmonit -> {{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <meta name="author" content="Zobin-IT Damian Pielka">
+    <meta name="company" content="GSM-monit">
+    <meta name="copyright" content="(c) 2022 Zobin-IT Damian Pielka">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo4.png' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/mdb.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+<div class="preload">
+  <div class="circles-group">
+    <img class="img-responsive brand image" src="{% static 'assets/img/logo4.png' %}" alt="GSM-monit Logo"/>
+  </div>
+</div>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-xl navbar-dark fixed-top" style="height: 70px; background-color: #303030; box-shadow: 8px 8px 24px 0 #303030;">
+    <div class="container-xl" id="container-mobile" style="background-color: #303030">
+        <a class="navbar-brand justify-content-center mt-2 mt-lg-0" href="{% url 'main' %}">
+        <img class="img-responsive brand" src="{% static 'assets/img/logo4.png' %}" height="50" alt="GSM-monit Logo"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarExample01">
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="{% url 'main' %}"><i class="fa-solid fa-house menu-icon"></i>{% trans 'Strona główna' %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'o-nas' %}"><i class="fa-solid fa-circle-info menu-icon"></i>{% trans 'O firmie' %}</a>
+          </li>
+          <!-- Navbar dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-lightbulb menu-icon"></i>
+            {% trans 'Oferta' %}
+          </a>
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="{% url 'monitoring' %}">{% trans 'Systemy monitoringu' %}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'alarmy' %}">{% trans 'Systemy alarmowe' %}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'domofony' %}">{% trans 'Domofony' %}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'elektryka' %}">{% trans 'Instalacje elektryczne' %}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'sieci' %}">{% trans 'Instalacje sieciowe' %}</a>
+            </li>
+          </ul>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'realizacje' %}"><i class="fa-solid fa-images menu-icon"></i>{% trans 'Nasze realizacje' %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'referencje' %}"><i class="fa-solid fa-comments menu-icon"></i>{% trans 'Referencje' %}</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'certyfikaty' %}"><i class="fa-solid fa-certificate menu-icon"></i>{% trans 'Certyfikaty' %}</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'kontakt' %}"><i class="fa-solid fa-phone menu-icon"></i>{% trans 'Kontakt' %}</a>
+          </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% if LANGUAGE_CODE == 'pl' %}
+                <i class="flag-poland flag m-0"></i>
+                {% elif LANGUAGE_CODE == 'en' %}
+                <i class="flag-united-kingdom flag m-0"></i>
+                {% elif LANGUAGE_CODE == 'de' %}
+                <i class="flag-germany flag m-0"></i>
+                {% endif %}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% language 'pl' %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info for LANGUAGE_CODE as lang %}
+              <li>
+                <a class="dropdown-item" href="{% url 'active_language' lang_code=LANGUAGE_CODE  %}"><i class="flag-poland flag"></i>{{ lang.name_local|title }}</a>
+              </li>
+                {% endlanguage %}
+              <li><hr class="dropdown-divider" /></li>
+                {% language 'en' %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info for LANGUAGE_CODE as lang %}
+              <li>
+                <a class="dropdown-item" href="{% url 'active_language' lang_code=LANGUAGE_CODE  %}"><i class="flag-united-kingdom flag"></i>{{ lang.name_local|title }}</a>
+              </li>
+                {% endlanguage %}
+                {% language 'de' %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info for LANGUAGE_CODE as lang %}
+              <li>
+                <a class="dropdown-item" href="{% url 'active_language' lang_code=LANGUAGE_CODE  %}"><i class="flag-germany flag"></i>{{ lang.name_local|title }}</a>
+              </li>
+                {% endlanguage %}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!-- Background image -->
+
+  <!-- Background image -->
+</header>
+<section>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide " data-mdb-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active bg-image" style="background-image: url('{% static 'assets/img/main/228972756_4000931513346922_3468318195699850703_n.jpg' %}'); background-size:cover; height: 90vh;">
+            <div class="mask d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.4);">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="text-white ms-5" style="text-align: left">
+                              <h1 class="mb-3" id="banner-h1" style="color: orange;">Najlepsze rozwiazania CCTV i SSWiN na rynku!</h1>
+                              <h4 class="mb-3" id="banner-h4">Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.</h4>
+                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">Kontakt</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item bg-image" style="background-image: url('{% static 'assets/img/main/eeb74b46-ccb0-44cb-8f1b-f244144e9451.jpg' %}'); background-size:cover; height: 90vh;">
+<div class="mask d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.4);">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="text-white ms-5" style="text-align: left">
+                              <h1 class="mb-3" id="banner-h1" style="color: orange;">Najlepsze rozwiazania CCTV i SSWiN na rynku!</h1>
+                              <h4 class="mb-3" id="banner-h4">Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.</h4>
+                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">Kontakt</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item bg-image" style="background-image: url('{% static 'assets/img/main/185426876_4048007431956909_1941094845033815883_n.jpg' %}'); background-size:cover; height: 90vh;">
+<div class="mask d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.4);">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="text-white ms-5" style="text-align: left">
+                              <h1 class="mb-3" id="banner-h1" style="color: orange;">Najlepsze rozwiazania CCTV i SSWiN na rynku!</h1>
+                              <h4 class="mb-3" id="banner-h4">Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.</h4>
+                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">Kontakt</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% block content %}
+
+{% endblock %}
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted pt-3">
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-4">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i><span style="color: orange;">GSM</span>-monit
+          </h6>
+          <p>
+            Jesteśmy profesjonalną firmą zajmującą się montażem systemów monitoringu i alarmu w województwie Opolskim.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Oferta
+          </h6>
+          <p>
+            <a href="{% url 'monitoring' %}" class="text-reset">- Systemy monitoringu</a>
+          </p>
+          <p>
+            <a href="{% url 'alarmy' %}" class="text-reset">- Systemy alarmowe</a>
+          </p>
+          <p>
+            <a href="{% url 'domofony' %}" class="text-reset">- Domofony</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <p>
+            <a href="{% url 'elektryka' %}" class="text-reset">- Instalacje elektryczne</a>
+          </p>
+            <p>
+            <a href="{% url 'sieci' %}" class="text-reset">- Instalacje sieciowe</a>
+          </p>
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-2">
+            Przydatne linki
+          </h6>
+          <p>
+            <a href="{% url 'polityka' %}" class="text-reset">- Polityka prywatności</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Kontakt
+          </h6>
+          <p><i class="fas fa-home me-3"></i> ul. Stawowa 2, 46-060 Przysiecz</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            biuro@gsm-monit.com.pl
+          </p>
+          <p><i class="fas fa-phone me-3"></i> +48 602 439 334</p>
+            <p><i class="fas fa-info me-3"></i> NIP: 991-021-91-54</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    Copyright © 2022 |
+    <a class="text-reset fw-bold" href="http://zobin-it.pl" target="_blank"><span style="color: orange;">Zobin-IT</span> Damian Pielka</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script>
+    const preload = document.querySelector('.preload');
+
+    preload.classList.add('show-preloader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preload.classList.remove('show-preloader');
+        }, 1000);
+    });
+
+</script>
+
+
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/mdb.min.js' %}"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script src="{% static 'assets/js/all.min.js' %}" crossorigin="anonymous"></script>
+</body>
+</html>

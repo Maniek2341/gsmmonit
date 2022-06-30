@@ -1,0 +1,170 @@
+{% extends 'sites/base/base.html' %}
+{% load static i18n%}
+{% block content %}
+
+<section id="installations" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="">
+	<div class="container pb-5">
+		<div class="row">
+			<div class="col-md-12 p-5">
+				<h2 class="wow bounceIn text-center pb-5" style="font-size: 40px;" data-wow-offset="50" data-wow-delay="0.3s">{% trans 'NASZA <span style="color: orange; font-weight: bold;">OFERTA</span>' %}</h2>
+				<p class="lead">{% trans "Posiadamy dostęp do wszelkich nowych technologii, dzięki czemu oferujemy najskuteczniejsze rozwiązania w atrakcyjnej cenie. Tworzymy systemy najlepiej dostosowane do najtrudniejszych warunków środowiskowych." %}</p>
+			</div>
+			<div class="row services-row">
+				<div class="col-md-4 col-sm-6 wow flipInX highlight">
+					<div class="service link" onclick="location.href='{% url 'monitoring' %}'">
+						<div class="service-icon">
+							<i class="fa-solid fa-eye ion-3x"></i>
+							<i class="fa-solid fa-eye back-icon"></i>
+						</div>
+						<div class="service-info">
+							<h4>{% trans 'Systemy Monitoringu' %}<br/>
+								<small>{% trans 'Najlepsza jakość za przystępną cenę.' %}</small>
+							</h4>
+							<p class="service-description">{% trans 'Dbając o Państwa mienie, chcielibyśmy zaproponować montaż wysokiej klasy monitoringu za przystępną cenę.' %}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 wow flipInY highlight">
+					<div class="service link" onclick="location.href='{% url 'alarmy' %}'">
+						<div class="service-icon" >
+							<i class="fas fa-fw fa-bullhorn ion-3x"></i>
+							<i class="fas fa-fw fa-bullhorn back-icon"></i>
+						</div>
+						<div class="service-info">
+							<h4>Systemy Alarmowe<br/>
+								<small>Montaż i serwis.</small>
+							</h4>
+							<p class="service-description">{% trans 'Oparte o infrastrukturę kablową oraz technologie bezprzewodowe. Integrację systemów alarmowych z elementami inteligentnych domów.' %}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 wow flipInX highlight">
+					<div class="service link" onclick="location.href='{% url 'sieci' %}'">
+						<div class="service-icon">
+							<i class="fa-solid fa-sitemap ion-3x"></i>
+							<i class="fa-solid fa-sitemap back-icon"></i>
+						</div>
+						<div class="service-info">
+							<h4>{% trans 'Instalacje Sieciowe' %}<br/>
+								<small>{% trans 'Sprawdzone rozwiązania' %}</small>
+							</h4>
+							<p class="service-description">{% trans 'Wykonujemy sieci komputerowe w mieszkaniach , domkach jednorodzinnych , oraz w szkołach i środowisku biurowym.' %}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 wow flipInY highlight">
+					<div class="service link" onclick="location.href='{% url 'elektryka' %}'">
+						<div class="service-icon">
+							<i class="fa-solid fa-bolt ion-3x"></i>
+							<i class="fa-solid fa-bolt back-icon"></i>
+						</div>
+						<div class="service-info">
+							<h4>Instalacje elektryczne<br/>
+								<small>Instalacje</small>
+							</h4>
+							<p class="service-description">{% trans 'Wykonujemy instalacje elektryczne zachowując wysoki standard i wszystkie rygorystyczne normy.' %}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 wow flipInY highlight">
+					<div class="service link" onclick="location.href='{% url 'automatyka' %}'">
+						<div class="service-icon">
+							<i class="fa-solid fa-home ion-3x"></i>
+							<i class="fa-solid fa-home back-icon"></i>
+						</div>
+						<div class="service-info">
+							<h4>{% trans 'Automatyka Budynkowa' %}<br/>
+								<small>{% trans 'Zautmatyzowane rozwiązania' %}</small>
+							</h4>
+							<p class="service-description">{% trans 'Zapraszamy Cię do miejsca, gdzie wszystkie instalacje mogą być ze sobą powiązane i mogą ze sobą współpracować.' %}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 wow flipInX highlight">
+					<div class="service link" onclick="location.href='{% url 'domofony' %}'">
+						<div class="service-icon">
+							<i class="fa-solid fa-key ion-3x"></i>
+							<i class="fa-solid fa-key back-icon"></i>
+						</div>
+						<div class="service-info">
+							<h4>{% trans 'Domofony i Bramy' %}<br/>
+								<small>{% trans 'Szeroka funkcjonalność' %}</small>
+							</h4>
+							<p class="service-description">{% trans 'Zwiększ swoją wygode. Dzięki naszemu systemowi będziesz w stanie otworzyć zdalnie furtkę oraz bramę garażową.' %}</p>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix hidden-sm hidden-xs"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="p-5 bg-image us" style="height: 400px;background-image: url('{% static 'assets/img/main/185426876_4048007431956909_1941094845033815883_n.jpg' %}');">
+	<div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+        <div class="container text-white">
+            <div class="row ">
+				<div class="col-md-12">
+                <h1 class="pt-3 text-center" style="font-weight: bold;">Dlaczego <span style="color: orange;">MY?</span></h1>
+                <p class="lead pt-3 pb-2 text-left">Jesteśmy specjalistami w swojej dziedzinie, nie ustannie podnosimy swoje kwalifikacje zawodowe, dzięki czemu możemy zaoferowac naszym Klientom wykonanie usługi na najwyższym poziomie.</p>
+                </div>
+				<div class="d-flex justify-content-left align-items-center col-md-6 col-sm-12">
+                    <ul class="list-group-flush us-list">
+                        <li class="list-group-item col-md-12 col-xs-12 list-us"><i class="fa-solid fa-check"></i><span class="text-white"> Gwarancja wykonania</span></li>
+                        <li class="list-group-item col-md-12 col-xs-12 list-us"><i class="fa-solid fa-check"></i><span class="text-white mx-2">Wieloletnie doświadczenie</span></li>
+                        <li class="list-group-item col-md-12 col-xs-12 list-us"><i class="fa-solid fa-check"></i><span class="text-white mx-2">Indywidualne podejście</span></li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-left align-items-center col-md-6 col-sm-12">
+                    <ul class="list-group-flush us-list">
+                        <li class="list-group-item col-md-12 col-xs-12 list-us"><i class="fa-solid fa-check"></i><span class="text-white mx-2">Najnowsze technologie</span></li>
+                        <li class="list-group-item col-md-12 col-xs-12 list-us"><i class="fa-solid fa-check"></i><span class="text-white mx-2">Sprawdzone rozwiązania</span></li>
+                        <li class="list-group-item col-md-12 col-xs-12 list-us"><i class="fa-solid fa-check"></i><span class="text-white mx-2">Atrakcyjne ceny</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		</div>
+    </section>
+
+<section class="p-5">
+    <div class="container mb-4">
+            <div class="intro">
+                <h1 class="text-center mb-5">Nasi partnerzy!</h1>
+            </div>
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/5351764_orig.jpg' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/GetBrandLogo.jpg' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/alnet.png' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/dahua.jpg' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/eltrox_pl_logo_biale.png' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/ganzSS_by_CBC.png' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/hikvision.png' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/indeks.jpg' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/indeks.png' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/logo_bcs-duze.jpg' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/logo_satel.jpg' %}"></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mb-3"><img class="img-fluid" src="{% static 'assets/img/partners/samsungbiglogo.ashx.png' %}"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background-color: lightgrey">
+	<div class="container">
+		<div class="row pt-5 pb-5">
+			<div class="col-12 ">
+				<h1 class="text-center pb-5">Certyfikat rzetelności GSM-Monit</h1>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<p>Dzięki naszej wieloletniej pracy, zdobyliśmy certyfikat rzetelnośći oraz wielu stałych klientów.</p>
+			</div>
+			<div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
+				<a href="https://wizytowka.rzetelnafirma.pl/7DC55XEE" target="_blank"> <img class="img-fluid" width="900" style="border-radius: 50px; box-shadow: 0px 0px 40px -14px rgba(0, 0, 0, 1);" src="{% static 'assets/img/main/pobrane.jpg' %}"></a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}

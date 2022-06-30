@@ -1,0 +1,30 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>INSTALACJE <span style="color:orange;">ELEKTRYCZNE</span></h2>
+            </div>
+            <div class="col-lg-6 mb-4 col-12">
+                <blockquote class="blockquote">
+                    <p class="monit-font">Wykonujemy instalacje elektryczne dla firm jak i osób prywatnych.</p>
+                    <p class="monit-font">Prace, które wykonujemy w zakresie elektrycznym możemy podzielić na:</p>
+                    <ul>
+                        <li class="monit-font">wykonanie kompletnego okablowania realizowanego budynku,</li>
+                        <li class="monit-font">montaż osprzętu elektrycznego (gniazdka, wyłączniki, oprawy oświetleniowe),</li>
+                        <li class="monit-font">montaż i podłączenie rozdzielnicy elektrycznej,</li>
+                    </ul>
+                </blockquote>
+            </div>
+            <div class="col-lg-6 mb-4 col-12 d-flex justify-content-center align-items-center">
+                <div class="photos row ">
+                    <div class="col-xs-12 col-md-6 item"><img class="img-fluid blur rounded" src="{% static 'assets/img/elektryka/rozdzielnia.jpeg' %}"></div>
+                    <div class="col-xs-12 col-md-6 item"><img class="img-fluid blur rounded" src="{% static 'assets/img/elektryka/rozdzielnia2.jpeg' %}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

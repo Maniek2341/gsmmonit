@@ -1,0 +1,105 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Skontaktuj sie z nami!</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Masz pytania? Zadzwoń do nas, lub skorzystaj z formularza kontaktowego, a my się odezwiemy!</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form class="ps-5 pe-5 needs-validation" method="POST" action="{% url 'kontakt' %}" novalidate>
+                {% csrf_token %}
+                  <!-- Name input -->
+                <div class="row">
+                    <div class="col-6">
+                      <div class="form-outline box mb-4">
+                        {{ kontakt.imie }}
+                        <label class="form-label">{{ kontakt.imie.label }}</label>
+                          <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                      </div>
+                    </div>
+
+                      <!-- Email input -->
+                    <div class="col-6">
+                      <div class="form-outline mb-4">
+                        {{ kontakt.email }}
+                        <label class="form-label">{{ kontakt.email.label }}</label>
+                          <div class="invalid-feedback">Musisz podać swój e-mail!</div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                      <div class="form-outline box mb-4">
+                        {{ kontakt.temat }}
+                        <label class="form-label">{{ kontakt.temat.label }}</label>
+                          <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                      </div>
+                    </div>
+
+                      <!-- Email input -->
+                    <div class="col-6">
+                      <div class="form-outline mb-4">
+                        {{ kontakt.phone }}
+                        <label class="form-label">{{ kontakt.phone.label }}</label>
+                          <div class="invalid-feedback">Musisz podać swój e-mail!</div>
+                      </div>
+                    </div>
+                </div>
+                  <!-- Message input -->
+                <div class="row">
+                    <div class="col-12">
+                      <div class="form-outline mb-4">
+                          {{ kontakt.tresc }}
+                        <label class="form-label">{{ kontakt.tresc.label }}</label>
+                          <div class="form-helper"></div>
+                          <div class="invalid-feedback">Nie możesz wysłać wiadomości bez treści!</div>
+                      </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn mb-4" style="background-color: orange;">Wyślij</button>
+                </div>
+
+                  <!-- Submit button -->
+
+                </form>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>ul. Stawowa 2, 46-060 Przysiecz</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+48 602 439 3349</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>biuro@gsm-monit.com.pl</p>
+                </li>
+                <li><i class="fa-solid fa-clock mt-4 fa-2x"></i>
+                    <p>Poniedziałek - Piątek: 7:30 - 15:30</p>
+                    <p>Sobota - Niedziela: Zamknięte</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+</div>
+{% endblock %}
