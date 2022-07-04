@@ -40,7 +40,7 @@ class KontaktView(View):
             message = render_to_string('sites/mail/contact.html', mail_content)
 
             send_mail(
-                subject="Wiadomość potwierdzająca dla szefa1",
+                subject=form.temat,
                 message='',
                 from_email=DEFAULT_FROM_EMAIL,
                 recipient_list=['damianpielka@o2.pl'],
