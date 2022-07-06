@@ -11,7 +11,7 @@
 			</div>
 			<div class="row services-row">
 				<div class="col-md-4 col-sm-6 wow flipInX highlight">
-					<div class="service link" onclick="location.href='{% url 'monitoring' %}'">
+					<div class="service link" onclick="location.href='{% url 'monitoring-cctv' %}'">
 						<div class="service-icon">
 							<i class="fa-solid fa-eye ion-3x"></i>
 							<i class="fa-solid fa-eye back-icon"></i>
@@ -80,6 +80,20 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-md-4 col-sm-6 wow flipInX highlight">
+					<div class="service link" onclick="location.href='{% url 'kontrola' %}'">
+						<div class="service-icon">
+							<i class="fa-solid fa-door-open ion-3x"></i>
+							<i class="fa-solid fa-door-open back-icon"></i>
+						</div>
+						<div class="service-info">
+							<h4>{% trans 'Kontrola dostępu' %}<br/>
+								<small>{% trans 'Nieustannie kontroluj' %}</small>
+							</h4>
+							<p class="service-description">{% trans 'Dzieki nam możesz kontrolowac, kto i kiedy wchodzi do twojego biura.' %}</p>
+						</div>
+					</div>
+				</div>
 				<div class="clearfix hidden-sm hidden-xs"></div>
 			</div>
 		</div>
@@ -92,7 +106,7 @@
             <div class="row ">
 				<div class="col-md-12">
                 <h1 class="pt-3 text-center" style="font-weight: bold;">Dlaczego <span style="color: orange;">MY?</span></h1>
-                <p class="lead pt-3 pb-2 text-left">Jesteśmy specjalistami w swojej dziedzinie, nie ustannie podnosimy swoje kwalifikacje zawodowe, dzięki czemu możemy zaoferowac naszym Klientom wykonanie usługi na najwyższym poziomie.</p>
+                <p class="lead pt-3 pb-2 text-left">Jesteśmy specjalistami w swojej dziedzinie, nieustannie podnosimy swoje kwalifikacje zawodowe, dzięki czemu możemy zaoferowac naszym Klientom wykonanie usługi na najwyższym poziomie.</p>
                 </div>
 				<div class="d-flex justify-content-left align-items-center col-md-6 col-sm-12">
                     <ul class="list-group-flush us-list">
@@ -146,7 +160,7 @@
 				<p>Dzięki naszej wieloletniej pracy, zdobyliśmy certyfikat rzetelnośći oraz wielu stałych klientów.</p>
 			</div>
 			<div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
-				<a href="https://wizytowka.rzetelnafirma.pl/7DC55XEE" target="_blank"> <img class="img-fluid" width="900" style="border-radius: 50px; box-shadow: 0px 0px 40px -14px rgba(0, 0, 0, 1);" src="{% static 'assets/img/main/pobrane.jpg' %}"></a>
+				<a href="https://wizytowka.rzetelnafirma.pl/7DC55XEE" target="_blank"> <img class="img-fluid" width="500" style="border-radius: 50px; box-shadow: 0px 0px 40px -14px rgba(0, 0, 0, 1);" src="{% static 'assets/img/main/pobrane.jpg' %}"></a>
 			</div>
 		</div>
 	</div>

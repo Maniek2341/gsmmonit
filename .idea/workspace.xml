@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23c946f2-c1b6-4eca-8d16-9f789144b6db" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/templates/sites/web/kontrola_dostepu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sites/web/monitoring_gsm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sites/web/uslugi_serwisowe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sites/web/wideodomofony.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/views/kontrola_dostepu_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/views/monitoring_gsm_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/views/uslugi_serwisowe_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/views/videodomofony_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GSM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GSM/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sites/mail/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/mail/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/views/kontakt_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/views/kontakt_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/img/logo-136px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/img/logo3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/img/logo4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/img/logo5-100px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sites/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/base/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sites/web/alarmy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/alarmy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sites/web/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sites/web/monitoring_cctv.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/monitoring_cctv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sites/web/onas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/onas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/views/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -104,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656747252366</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Commit">
+      <created>1656949621323</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656949621323</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

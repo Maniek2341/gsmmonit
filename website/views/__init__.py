@@ -11,3 +11,7 @@ from .active_language import active_language
 from .domofony_view import DomofonyView
 from .elektryka_view import ElektrykaView
 from .onas_view import ONasView
+from .monitoring_gsm_view import MonitoringGSMView
+from .videodomofony_view import VideoDomofonyView
+from .kontrola_dostepu_view import KontrolaDostepuView
+from .uslugi_serwisowe_view import UslugiSerwisoweView

@@ -1,0 +1,26 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+{% block content %}
+<section class="p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>MONITORING <span style="color: orange;">BUDOWY</span></h2>
+            </div>
+            <div class="col-md-12">
+                <blockquote class="blockquote">
+                <p class="monit-font">Jedną z naszych pierwszych profesji, było tworzenie systemów opartych na technologii GSM.
+                    Dzięki wieloletniemu doświadczeniu, stworzyliśmy produkty, które pełnić mogą funkcje monitoringu – przy wykorzystaniu autonomicznego systemu zasilania.</p>
+                <p class="monit-font">Rozwiązania takie znajdują zastosowanie w przypadku dokumentowania np. przebiegu budowy, monitoringu działki, monitoringu warunków pogodowych jak i monitoring mobilny.</p>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="row photos mt-4">
+            <div class="col-xs-6 col-md-4 item mb-4"><img class="img-fluid blur rounded" src="{% static 'assets/img/monitoring/image001full.jpg' %}"></div>
+            <div class="col-xs-6 col-md-4 item mb-4"><img class="img-fluid blur rounded" src="{% static 'assets/img/monitoring/image005full.jpg' %}"></div>
+            <div class="col-xs-6 col-md-4 item mb-4"><img class="img-fluid blur rounded" src="{% static 'assets/img/monitoring/image006full.png' %}"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

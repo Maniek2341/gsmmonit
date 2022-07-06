@@ -11,7 +11,7 @@
     <meta name="company" content="GSM-monit">
     <meta name="copyright" content="(c) 2022 Zobin-IT Damian Pielka">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo4.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo-1.png' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/mdb.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
@@ -21,15 +21,15 @@
 <body>
 <div class="preload">
   <div class="circles-group">
-    <img class="img-responsive brand image" src="{% static 'assets/img/logo4.png' %}" alt="GSM-monit Logo"/>
+    <img class="img-responsive brand image" src="{% static 'assets/img/logo-1.png' %}" alt="GSM-monit Logo"/>
   </div>
 </div>
 <header>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-xl navbar-dark fixed-top" style="height: 70px; background-color: #303030; box-shadow: 8px 8px 24px 0 #303030;">
+  <nav class="navbar pt-0 navbar-expand-xl navbar-dark fixed-top" style="height: 70px; background-color: #303030; box-shadow: 3px 3px 14px 0 #303030;">
     <div class="container-xl" id="container-mobile" style="background-color: #303030">
-        <a class="navbar-brand justify-content-center mt-2 mt-lg-0" href="{% url 'main' %}">
-        <img class="img-responsive brand" src="{% static 'assets/img/logo4.png' %}" height="50" alt="GSM-monit Logo"/>
+        <a class="navbar-brand justify-content-center mt-2" href="{% url 'main' %}">
+        <img class="img-responsive brand" src="{% static 'assets/img/logo-1.png' %}" height="50" alt="GSM-monit Logo"/>
       </a>
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
@@ -51,19 +51,31 @@
           <!-- Dropdown menu -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item" href="{% url 'monitoring' %}">{% trans 'Systemy monitoringu' %}</a>
+              <a class="dropdown-item" href="{% url 'monitoring-cctv' %}">{% trans 'Monitoring CCTV' %}</a>
             </li>
             <li>
-              <a class="dropdown-item" href="{% url 'alarmy' %}">{% trans 'Systemy alarmowe' %}</a>
+              <a class="dropdown-item" href="{% url 'monitoring-gsm' %}">{% trans 'Monitoring budowy' %}</a>
             </li>
             <li>
-              <a class="dropdown-item" href="{% url 'domofony' %}">{% trans 'Domofony' %}</a>
+              <a class="dropdown-item" href="{% url 'alarmy' %}">{% trans 'Alarmy' %}</a>
             </li>
             <li>
-              <a class="dropdown-item" href="{% url 'elektryka' %}">{% trans 'Instalacje elektryczne' %}</a>
+              <a class="dropdown-item" href="{% url 'domofony' %}">{% trans 'Domofony ' %}</a>
             </li>
             <li>
-              <a class="dropdown-item" href="{% url 'sieci' %}">{% trans 'Instalacje sieciowe' %}</a>
+              <a class="dropdown-item" href="{% url 'videodomofony' %}">{% trans 'Wideodomofony ' %}</a>
+            </li>
+              <li>
+              <a class="dropdown-item" href="{% url 'kontrola' %}">{% trans 'Kontrola dostępu ' %}</a>
+            </li>
+              <li>
+              <a class="dropdown-item" href="{% url 'elektryka' %}">{% trans 'Instalacje elektryczne ' %}</a>
+            </li>
+              <li>
+              <a class="dropdown-item" href="{% url 'sieci' %}">{% trans 'Instalacje LAN ' %}</a>
+            </li>
+              <li>
+              <a class="dropdown-item" href="{% url 'serwisy' %}">{% trans 'Usługi serwisowe ' %}</a>
             </li>
           </ul>
             <li class="nav-item">
@@ -209,7 +221,7 @@
             Oferta
           </h6>
           <p>
-            <a href="{% url 'monitoring' %}" class="text-reset">- Systemy monitoringu</a>
+            <a href="{% url 'monitoring-cctv' %}" class="text-reset">- Monitoring CCTV</a>
           </p>
           <p>
             <a href="{% url 'alarmy' %}" class="text-reset">- Systemy alarmowe</a>
@@ -226,7 +238,7 @@
             <a href="{% url 'elektryka' %}" class="text-reset">- Instalacje elektryczne</a>
           </p>
             <p>
-            <a href="{% url 'sieci' %}" class="text-reset">- Instalacje sieciowe</a>
+            <a href="{% url 'sieci' %}" class="text-reset">- Instalacje LAN</a>
           </p>
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-2">
