@@ -1,0 +1,25 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>SYSTEMY <span style="color:orange;">RCP</span></h2>
+            </div>
+            <div class="col-md-12">
+                <blockquote class="blockqouote">
+                    <p class="monit-font">System Rejestracji Czasu Pracy to skuteczne narzędzie do zwiększenia wydajności twojej firmy.
+                        Zyskaj stały i wygodny dostęp do danych swojego biznesu.
+                        Zlikwiduj papierowe listy obecności.
+                        Analizuj i zarządzaj czasem pracy z dowolnego miejsca i urządzenia.</p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="row photos mt-4">
+            <div class="col-xs-6 col-md-6 item mb-4"><a href="{% static 'assets/img/rcp/rcp.png' %}" data-lightbox="photos"><img class="img-fluid rounded" src="{% static 'assets/img/rcp/rcp.png' %}"></a></div>
+            <div class="col-xs-6 col-md-6 item mb-4"><a href="{% static 'assets/img/rcp/rcp2.png' %}" data-lightbox="photos"><img class="img-fluid rounded" src="{% static 'assets/img/rcp/rcp2.png' %}"></a></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

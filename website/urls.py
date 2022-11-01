@@ -1,7 +1,8 @@
 from django.urls import path
 from website.views import MainView, KontaktView, ReferencjeView, CertyfikatyView, RealizacjeView, AlarmyView, \
     PolitykaView, MonitoringCCTVView, ElektrykaView, DomofonyView, SieciView, ONasView, VideoDomofonyView, \
-    UslugiSerwisoweView, MonitoringGSMView, KontrolaDostepuView
+    UslugiSerwisoweView, MonitoringGSMView, KontrolaDostepuView, MonitoringMobilnyView, UslugiDodatkoweView, RCPView, \
+    SponsoringView
 
 urlpatterns = [
     path('', MainView.as_view(), name='main'),
@@ -20,4 +21,8 @@ urlpatterns = [
     path('monitoring-gsm', MonitoringGSMView.as_view(), name='monitoring-gsm'),
     path('kontrola-dostepu', KontrolaDostepuView.as_view(), name='kontrola'),
     path('videodomofony', VideoDomofonyView.as_view(), name='videodomofony'),
+    path('monitoring-mobilny', MonitoringMobilnyView.as_view(), name='monitoring-mobilny'),
+    path('uslugi-dodatkowe', UslugiDodatkoweView.as_view(), name='uslugi-dodatkowe'),
+    path('rcp', RCPView.as_view(), name='rcp'),
+    path('sponsoring', SponsoringView.as_view(), name='sponsoring'),
 ]

@@ -33,18 +33,16 @@ body {
     align-items: center;
     position: fixed;
     z-index: 10000;
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
+    opacity: 1;
     width: 100vw;
     height: 100vh;
     top: 0;
-    background-color: #10131a;
-    transition: opacity 400ms ease-in-out, visibility 0s 400ms;
 }
 
 .show-preloader {
-    visibility: visible;
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .image {
@@ -358,6 +356,10 @@ h4 small {
 
 .lead {
     font-size: 21px;
+}
+
+.serw {
+    padding-left: 10px;
 }
 
 @media (max-width: 1200px) {
