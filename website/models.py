@@ -8,3 +8,12 @@ class Kontakt(models.Model):
     temat = models.CharField(max_length=150)
     phone = models.IntegerField()
     tresc = models.TextField(max_length=255)
+
+
+    class Meta:
+        verbose_name = 'Kontakt'
+        verbose_name_plural = 'Kontakty'
+
+
+    def __str__(self):
+        return f"Klient: {self.imie} wyslal: {self.temat}"
