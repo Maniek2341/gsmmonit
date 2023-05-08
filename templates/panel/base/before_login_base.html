@@ -1,0 +1,67 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel | GSM-Monit</title>
+
+  <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo-1.png' %}">
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'assets/panel/fontawesome-free/css/all.min.css'%}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static 'assets/panel/icheck-bootstrap/icheck-bootstrap.min.css '%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'assets/panel/dist/css/adminlte.min.css '%}">
+  <link href="{% static 'assets/panel/toastr/toastr.css' %}" rel="stylesheet"/>
+    <script>
+        let messages = [];
+        {% if messages %}
+        {% for message in messages %}
+        messages.push({
+            'tag': '{% if message.tags %}{{ message.tags }}{% else %}info{% endif %}',
+            'data': '{{ message|safe }}'
+        })
+        {% endfor %}
+        {% endif %}
+    </script>
+</head>
+<body class="hold-transition login-page">
+
+{% block content %}{% endblock %}
+
+<!-- jQuery -->
+<script src="{% static 'assets/panel/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'assets/panel/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'assets/panel/dist/js/adminlte.min.js' %}"></script>
+<script src="{% static 'assets/panel/toastr/toastr.min.js' %}"></script>
+<script>
+    toastr.options = {
+      "closeButton": true,
+      "newestOnTop": true,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "timeOut": "10000",
+      "extendedTimeOut": "2000"
+    }
+</script>
+<script>
+    messages.forEach(function(msg){
+        try {
+            let message = JSON.parse(msg.data);
+        toastr[msg.tag](message.body, message.title)
+        } catch (e){
+            toastr[msg.tag](msg.data)
+            console.warn("Something go wrong with the notification ;-(")
+        }
+
+    });
+</script>
+</body>
+</html>

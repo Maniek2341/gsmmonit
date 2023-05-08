@@ -1,0 +1,109 @@
+{% extends 'panel/base/base.html' %}
+{%load static%}
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 ">
+                    <div class="card card-primary">
+
+                <div class="card-header">
+                    <h3 class="card-title">Edytuj klienta: {{ klient.nazwa_firmy }}</h3>
+                </div>
+
+        <form method="POST" action="{% url 'edit_klient' pk=klient.pk %}">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="form-group">
+                        <label for="id_nazwa_firmy">Nazwa firmy</label>
+                            {{ klient_form.nazwa_firmy }}
+                        </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Imię</label>
+                            {{ klient_form.imie }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Nazwisko</label>
+                            {{ klient_form.nazwisko }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">E-Mail</label>
+                            {{ klient_form.email }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">NIP</label>
+                            {{ klient_form.nip }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Kraj</label>
+                            {{ klient_form.kraj }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Ulica</label>
+                            {{ klient_form.ulica }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Miejscowość</label>
+                            {{ klient_form.miejscowosc }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Kod Pocztowy</label>
+                            {{ klient_form.kod_pocztowy }}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Nr Telefonu</label>
+                            {{ klient_form.telefon }}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-check">
+                {{ klient_form.czy_firma }}
+                <label class="form-check-label" for="exampleCheck1">Zaznacz jeżeli dodajesz klienta firmowego</label>
+                </div>
+            </div>
+
+            <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Edytuj</button>
+                <a href="{% url 'list_klient' %}" class="btn btn-primary float-right">Wróc</a>
+            </div>
+        </form>
+    </div>
+</div>
+        </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

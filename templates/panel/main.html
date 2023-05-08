@@ -1,0 +1,102 @@
+{% extends 'panel/base/base.html' %}
+{%load static%}
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Strona Główna</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="container-fluid">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-3 col-6">
+
+          <div class="small-box bg-info">
+            <div class="inner">
+            <h3>{{ all_klients }}</h3>
+            <p>Liczba klientów</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-bag"></i>
+            </div>
+            <a href="" class="small-box-footer">Więcej szczegółów <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+            <div class="inner">
+            <h3>{{all_raports}}</h3>
+            <p>Liczba raportów serwisowych</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{% url 'list_raport' %}" class="small-box-footer">Więcej szczegółów <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+
+      <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Ostatnie raporty serwisowe</h3>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Klient</th>
+                        <th>Data zakończenia</th>
+                        <th>Rodzaj prac</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for raport in ostatnieraporty %}
+                    <tr>
+                        <td><a href="pages/examples/invoice.html">{{ raport.firma.nazwa_firmy }}</a></td>
+                        <td>{{ raport.data_end }}</td>
+                        <td>
+                            {% if raport.rodzaj_prac == 1 %}
+                            <span class="badge badge-danger">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 2 %}
+                            <span class="badge badge-warning">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 3 %}
+                            <span class="badge badge-success">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 4 %}
+                            <span class="badge badge-info">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 5 %}
+                            <span class="badge badge-primary">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-footer clearfix">
+            <a href="{% url 'add_raport' %}" class="btn btn-sm btn-info float-left">Dodaj nowy</a>
+            <a href="{% url 'list_raport' %}" class="btn btn-sm btn-secondary float-right">Zobacz wszystkie</a>
+        </div>
+    </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+{% endblock %}

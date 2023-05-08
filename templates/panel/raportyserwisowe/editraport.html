@@ -1,0 +1,91 @@
+{% extends 'panel/base/base.html' %}
+{%load static%}
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 ">
+                    <div class="card card-primary">
+
+                <div class="card-header">
+                    <h3 class="card-title">Edytuj raport serwisowy od klienta: {{ raport.nazwa.nazwa_firmy }}</h3>
+                </div>
+
+        <form method="POST" action="{% url 'edit_raport' pk=raport.pk %}">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id_nazwa_firmy">Firma</label>
+                    {{ raport_form.firma }}
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="id_nazwa_firmy">Data zakonczenia prac</label>
+                            {{ raport_form.data_end }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_nazwa_firmy">Wykonane prace</label>
+                    {{ raport_form.wykonane_prace }}
+                </div>
+
+                <div class="form-group">
+                <label for="id_nazwa_firmy">Urzadzenia</label>
+                    {{ raport_form.urzadzenia }}
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Robocizna (h)</label>
+                            {{ raport_form.robocizna }}
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Dojazd (km)</label>
+                            {{ raport_form.dojazd }}
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Ilość pracowników (szt)</label>
+                            {{ raport_form.pracownicy_szt }}
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        <label for="id_nazwa_firmy">Rodzaj prac</label>
+                            {{ raport_form.rodzaj_prac }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="id_nazwa_firmy">Jeśli masz zdjecia z serwisu, dodaj je</label>
+                        {{ raport_form.zdjecia }}
+                    </div>
+                </div>
+            </div>
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Edytuj</button>
+                  <a href="{% url 'list_raport' %}" class="btn btn-primary float-right">Wróc</a>
+                </div>
+            </form>
+        </div>
+    </div>
+        </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

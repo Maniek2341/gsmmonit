@@ -1,0 +1,38 @@
+{% extends 'panel/base/base.html' %}
+{%load static%}
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 ">
+                    <div class="card card-danger">
+
+                <div class="card-header">
+                    <h4 class="card-title">Czy napewno usunąć raport od klienta: {{ raport.nazwa.nazwa_firmy }}</h4>
+                </div>
+
+                        <div class="card-body">
+                                <form method="POST" action="{% url 'delete_raport' pk=raport.pk %}">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <div class="col-lg-6 ml-auto">
+                                            <button type="submit" class="btn btn-danger">Usuń</button>
+                                        </div>
+                                        <div class="col-lg-6 ml-auto">
+                                            <a href="{% url 'list_raport' %}" class="btn btn-primary">Wróc</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+    </div>
+</div>
+        </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

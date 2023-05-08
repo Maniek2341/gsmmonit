@@ -1,0 +1,65 @@
+{% extends 'panel/base/base.html' %}
+{%load static%}
+{% block content %}
+<div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <section class="content-header">
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+              <div class="card-header">
+              <h3 class="card-title">Lista klientów</h3>
+              </div>
+
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Firma</th>
+                      <th>Imie</th>
+                      <th>Nazwisko</th>
+                      <th>E-mail</th>
+                      <th>NIP</th>
+                      <th>Ulica</th>
+                      <th>Kod Pocztowy</th>
+                      <th>Kraj</th>
+                      <th>Miejscowość</th>
+                      <th>Telefon</th>
+                      <th>Czy to firma</th>
+                      <th>Akcje</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for klient in klients %}
+                    <tr>
+                      <td>{{ klient.nazwa_firmy }}</td>
+                      <td>{{ klient.imie|default:"Brak" }}</td>
+                      <td>{{ klient.nazwisko|default:"Brak" }}</td>
+                      <td>{{ klient.email|default:"Brak" }}</td>
+                      <td>{{ klient.nip|default:"Brak" }}</td>
+                      <td>{{ klient.ulica|default:"Brak" }}</td>
+                      <td>{{ klient.kod_pocztowy|default:"Brak" }}</td>
+                      <td>{{ klient.kraj|default:"Brak" }}</td>
+                      <td>{{ klient.miejscowosc|default:"Brak" }}</td>
+                      <td>{{ klient.telefon|default:"Brak" }}</td>
+                      <td>{{ klient.czy_firma|yesno:"1,0"}}</td>
+                      <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                          <a href="{% url 'edit_klient' klient.pk %}"><i class="fa-solid fa-pen-to-square" style="color: #00ff2a;"></i></a>
+                        </button>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                          <a href="{% url 'delete_klient' klient.pk %}"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></a>
+                        </button>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

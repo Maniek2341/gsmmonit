@@ -1,0 +1,54 @@
+{% extends 'panel/base/before_login_base.html' %}
+{% load static %}
+{% block content %}
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <img class="img-fluid" src="{% static 'assets/panel/img/logo-1.png'%}">
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Zaloguj sie na swoje konto</p>
+
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          {{ login_form.username }}
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          {{ login_form.password }}
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-7">
+          </div>
+          <!-- /.col -->
+          <div class="col-5">
+            <button type="submit" class="btn btn-primary btn-block">Zaloguj się</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+
+      <p class="mb-1">
+        <a href="{% url 'forgot' %}">Zapomniałem hasła</a>
+      </p>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+{% endblock %}

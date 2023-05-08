@@ -1,0 +1,127 @@
+{% extends 'panel/base/base.html' %}
+{%load static%}
+{% block content %}
+<div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <section class="content-header">
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    {% if raport.rodzaj_prac == 1 %}
+                    <div class="card card-danger">
+                    {% elif raport.rodzaj_prac == 2 %}
+                    <div class="card card-warning">
+                    {% elif raport.rodzaj_prac == 3 %}
+                    <div class="card card-success">
+                    {% elif raport.rodzaj_prac == 4 %}
+                    <div class="card card-info">
+                    {% elif raport.rodzaj_prac == 5 %}
+                    <div class="card card-primary">
+                    {% endif %}
+              <div class="card-header">
+                <h4 class="text-center">DYŻUR SERWISOWY(szczególy)</h4>
+                <p class="float-right">Dyżurujący serwisant: {{ raport.pracownik.first_name }} {{ raport.pracownik.last_name }}</p>
+              </div>
+
+            <div class="card-body table-responsive p-0">
+                <table class="table table-bordered">
+                  <tbody>
+                      <tr>
+                          <th scope="col">Imię i nazwisko klienta</th>
+                          <td colspan="3">{{ raport.firma.imie|default:"Brak" }} {{ raport.firma.nazwisko|default:"" }}</td>
+                      </tr>
+                      <tr>
+                          <th scope="col">Adres</th>
+                          <td colspan="3">{{ raport.firma.miejscowosc|default:"Brak" }} , {{ raport.firma.ulica|default:"" }}</td>
+                      </tr>
+                      <tr>
+                          <th>Nip nabywcy: </th>
+                          <td>{{ raport.firma.nip|default:"Brak" }}</td>
+                          <th>Telefon:</th>
+                          <td>{{ raport.firma.telefon|default:"Brak" }}</td>
+                      </tr>
+                      <tr>
+                          <th>Email:</th>
+                          <td>{{ raport.firma.email|default:"Brak" }}</td>
+                          <th>Data i godzina wykonania serwisu:</th>
+                          <td>{{ raport.data_end }} {{ raport.hour_end }}</td>
+                      </tr>
+                      <tr>
+                          <th colspan="4" class="text-center">Wykorzystane urządzenia, nr fabryczny</th>
+                      </tr>
+                      <tr>
+                          <td colspan="4"><pre>{{ raport.urzadzenia }}</pre></td>
+                      </tr>
+                      <tr>
+                          <th colspan="4" class="text-center">Wykonane prace</th>
+
+                      </tr>
+                      <tr>
+                          <td colspan="4"><pre>{{ raport.wykonane_prace }}</pre></td>
+                      </tr>
+                      <tr>
+                          <th>Robocizna</th>
+                          <td>{{ raport.robocizna }}h</td>
+                          <th>Dojazd</th>
+                          <td>{{ raport.dojazd }}km</td>
+                      </tr>
+                      <tr>
+                          <th>Ilość pracowników</th>
+                          <td>{{ raport.pracownicy_szt }}</td>
+                          <th>Rodzaj prac</th>
+                          <td>
+                            {% if raport.rodzaj_prac == 1 %}
+                            <span class="badge badge-danger">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 2 %}
+                            <span class="badge badge-warning">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 3 %}
+                            <span class="badge badge-success">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 4 %}
+                            <span class="badge badge-info">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% elif raport.rodzaj_prac == 5 %}
+                            <span class="badge badge-primary">{{ raport.get_rodzaj_prac_display|default:"Brak" }}</span>
+                            {% endif %}
+                          </td>
+                      </tr>
+                  <tr>
+                      <th>Aktualny status</th>
+                      <td colspan="3">
+                        {% if raport.status == 1 %}
+                          <span class="badge badge-warning">{{ raport.get_status_display }}</span>
+                        {% elif raport.status == 2 %}
+                          <span class="badge badge-primary">{{ raport.get_status_display }}</span>
+                        {% elif raport.status == 3 %}
+                          <span class="badge badge-success">{{ raport.get_status_display }}</span>
+                        {% endif %}
+                      </td>
+                  </tr>
+                  </tbody>
+                </table>
+<div class="row pt-4">
+    <div class="col-sm-2 col-12 d-flex align-items-center justify-content-center">Zmień status na:</div>
+                              <div class="col-sm-4 col-12 d-flex align-items-center justify-content-center">
+                              <form method="POST" action="{% url 'faktura_raport' raport.pk %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-sm btn-rounded btn-primary">Zafakturowane</button>
+                              </form>
+                              </div>
+                                  <div class="col-sm-2 col-12 d-flex align-items-center justify-content-center"><span>lub</span></div>
+                                  <div class="col-sm-4 col-12 d-flex align-items-center justify-content-center">
+                              <form method="POST" action="{% url 'detail_raport' raport.pk %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-sm btn-rounded btn-success">Wysłane</button>
+                              </form>
+                          </div>
+                        </div>
+              </div>
+            </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+{% endblock %}
