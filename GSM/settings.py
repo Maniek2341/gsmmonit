@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
+    'panel.apps.PanelConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,6 @@ LANGUAGES = [
     ('pl', 'Polski'),
     ('de', 'Niemiecki'),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "zdjecia")
+MEDIA_URL = "/zdjecia/"

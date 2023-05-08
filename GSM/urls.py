@@ -27,5 +27,6 @@ urlpatterns = [
 urlpatterns += i18n_patterns (
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
+    path('panel/', include('panel.urls')),
     prefix_default_language=True,
 )

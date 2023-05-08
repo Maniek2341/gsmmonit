@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="23c946f2-c1b6-4eca-8d16-9f789144b6db" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/templates/assets/img/domofony/domofon1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/assets/img/domofony/domofon2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/assets/img/domofony/domofon3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/assets/img/domofony/domofon4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/assets/img/domofony/domofon5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/views/ppoz_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GSM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/GSM/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GSM/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/GSM/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/img/domofony/domofon1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/img/domofony/domofon2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/img/domofony/domofon3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/assets/js/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/assets/js/jquery-3.6.1.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sites/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sites/web/alarmy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/alarmy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sites/web/certyfikaty.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/certyfikaty.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sites/web/kontakt.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/kontakt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sites/web/kontrola_dostepu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/kontrola_dostepu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sites/web/domofony.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/domofony.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sites/web/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sites/web/realizacje.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/realizacje.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sites/web/uslugi_serwisowe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sites/web/uslugi_serwisowe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sites/web/wideodomofony.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/views/videodomofony_view.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -35,7 +49,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29ytgCUXuVmBN4WiNdfv4OsrSK1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,17 +61,22 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/manie/Desktop/zobinWebsite&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/manie/Desktop/GSM&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\manie\Desktop\GSM\templates\assets\panel\img" />
+      <recent name="C:\Users\manie\Desktop\GSM\panel\views" />
       <recent name="C:\Users\manie\Desktop\GSM\templates\assets\js" />
       <recent name="C:\Users\manie\Desktop\GSM\website\views" />
       <recent name="C:\Users\manie\Desktop\GSM\templates\assets\img\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\manie\Desktop\GSM\templates\panel" />
+      <recent name="C:\Users\manie\Desktop\GSM\templates\assets\panel" />
+      <recent name="C:\Users\manie\Desktop\GSM\templates\assets\img\domofony" />
       <recent name="C:\Users\manie\Desktop\GSM" />
     </key>
   </component>
@@ -126,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657142967233</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit">
+      <created>1667293410934</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667293410934</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

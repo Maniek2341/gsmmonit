@@ -40,7 +40,7 @@ body {
     top: 0;
 }
 
-.show-preloader {
+.hide-preloader {
     visibility: hidden;
     opacity: 0;
 }

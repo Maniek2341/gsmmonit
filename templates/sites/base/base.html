@@ -18,29 +18,18 @@
     <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-3.4.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
     <script>
 
 
-    $(document).ready(function() {
-        if (sessionStorage.getItem('dontLoad') == null)
-        {
-            const preload = document.querySelector('.preload');
 
-            $("preload").delay('3000').fadeOut(1000);
-            preload.classList.add('show-preloader');
-            sessionStorage.setItem('dontLoad', 'true');
-
-        }
-
-    });
 </script>
 </head>
 <body>
-<div class="preload">
+<div class="preload" style="visibility: hidden;">
   <div class="circles-group">
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted">
     <source src="{% static 'assets/film.mp4' %}" type="video/mp4">
   </video>
   </div>
@@ -73,7 +62,7 @@
           <ul class="dropdown-menu" style="min-width: 25rem !important;" aria-labelledby="navbarDropdown">
               <div class="row">
                   <div class="col-6">
-                      <li>
+                    <li>
                       <a class="dropdown-item" href="{% url 'monitoring-cctv' %}">{% trans 'Monitoring CCTV' %}</a>
                     </li>
                     <li>
@@ -89,7 +78,7 @@
                       <a class="dropdown-item" href="{% url 'domofony' %}">{% trans 'Domofony ' %}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="{% url 'videodomofony' %}">{% trans 'Wideodomofony ' %}</a>
+                      <a class="dropdown-item" href="{% url 'ppoz' %}">{% trans 'Systemy pożarowe ' %}</a>
                     </li>
                   </div>
 
@@ -125,10 +114,10 @@
             <a class="nav-link" href="{% url 'certyfikaty' %}"><i class="fa-solid fa-certificate menu-icon"></i>{% trans 'Certyfikaty' %}</a>
           </li>
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'sponsoring' %}"><i class="fa-solid fa-certificate menu-icon"></i>{% trans 'Sponsoring' %}</a>
+            <a class="nav-link" href="{% url 'sponsoring' %}"><i class="fa-solid fa-dollar-sign menu-icon"></i>{% trans 'Sponsoring' %}</a>
           </li>
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'sponsoring' %}"><i class="fa-solid fa-phone menu-icon"></i>{% trans 'Kontakt' %}</a>
+            <a class="nav-link" href="{% url 'kontakt' %}"><i class="fa-solid fa-phone menu-icon"></i>{% trans 'Kontakt' %}</a>
           </li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
