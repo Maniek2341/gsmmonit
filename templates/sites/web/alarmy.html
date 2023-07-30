@@ -1,35 +1,35 @@
 {% extends 'sites/base/base.html' %}
-{% load static %}
+{% load static i18n %}
 {% block content %}
 <section>
     <div class="container-fluid pt-5 pb-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-9">
-                <h2>INSTALACJE <span style="color:orange;">ALARMOWE</span></h2>
+                <h2>{% trans 'INSTALACJE <span style="color:orange;">ALARMOWE' %}</span></h2>
             </div>
             <div class="col-md-9">
                 <blockquote class="blockquote">
-                    <p class="monit-font"><img style="float: right;" height="500" src="{% static 'assets/img/alarmy/perfecta.png' %}"><strong> Systemy alarmowe</strong> są podstawą zabezpieczenia budynków oraz posesji przed dostępem osób niepożądanych.
+                    <p class="monit-font"><img style="float: right;" height="500" src="{% static 'assets/img/alarmy/perfecta.png' %}"><strong> {% trans 'Systemy alarmowe</strong> są podstawą zabezpieczenia budynków oraz posesji przed dostępem osób niepożądanych.
                         Stanowią ochronę aktywną oraz prewencyjną. Pozwalają na bezpieczne pozostawienie nieruchomości bez obawy o nasze mienie.
                         Stosowane są w <strong>sklepach, biurach, budynkach użyteczności publicznej oraz w prywatnych domach jednorodzinnych</strong>.
-                        Można je zamontować zarówno w domkach letniskowych czy sezonowych, jak również w piwnicach czy garażach.</p>
-                        <p class="monit-font">Podstawowym elementem wyposażenia takiego systemu są pasywne czujniki podczerwieni reagujące na ruch.
+                        Można je zamontować zarówno w domkach letniskowych czy sezonowych, jak również w piwnicach czy garażach.' %}</p>
+                        <p class="monit-font">{% trans 'Podstawowym elementem wyposażenia takiego systemu są pasywne czujniki podczerwieni reagujące na ruch.
                         W zależności od potrzeb można rozbudować system zabezpieczenia o czujniki magnetyczne zamontowane w oknach, drzwiach i bramach garażowych.
-                        Wówczas alarm zostaje uruchomiony już w momencie próby wtargnięcia intruza. </p>
-                        <p class="monit-font"><strong> Systemy alarmowe</strong> nie są skomplikowane w obsłudze.
-                        Alarm włączany jest lub wyłączany przez użytkownika poprzez wpisywanie kodu na klawiaturze manipulatora.</p>
+                        Wówczas alarm zostaje uruchomiony już w momencie próby wtargnięcia intruza.' %} </p>
+                        <p class="monit-font"><strong> {% trans 'Systemy alarmowe</strong> nie są skomplikowane w obsłudze.
+                        Alarm włączany jest lub wyłączany przez użytkownika poprzez wpisywanie kodu na klawiaturze manipulatora.' %}</p>
                 </blockquote>
             </div>
         </div>
 
         <div class="row pb-5 d-flex justify-content-center align-items-center">
             <div class="col-md-9">
-                <h2>Sterowanie alarmem z poziomu telefonu</h2>
+                <h2>{% trans 'Sterowanie alarmem z poziomu telefonu' %}</h2>
             </div>
             <div class="col-md-9">
                 <blockquote class="blockquote">
-                    <p class="monit-font">Jeżeli zapomnisz aktywować alarm, możesz to zrobić zdalnie a dzięki powiadomieniom na telefonie masz pewność, że centrala jest w stanie czuwania.</p>
-                        <p class="monit-font">Nowoczesne centrale są kompatybilne ze smartfonami. Jedyną rzeczą dodatkową jaką należy dołączyć do systemu jest karta sim.</p>
+                    <p class="monit-font">{% trans 'Jeżeli zapomnisz aktywować alarm, możesz to zrobić zdalnie a dzięki powiadomieniom na telefonie masz pewność, że centrala jest w stanie czuwania.' %}</p>
+                        <p class="monit-font">{% trans 'Nowoczesne centrale są kompatybilne ze smartfonami. Jedyną rzeczą dodatkową jaką należy dołączyć do systemu jest karta sim.' %}</p>
                 </blockquote>
             </div>
         </div>
@@ -37,14 +37,14 @@
         <div class="row pt-5 pb-5 d-flex justify-content-center align-items-center" style="background-color: lightgrey;">
             <div class="col-md-9">
                 <blockquote class="blockquote">
-                    <p class="monit-font">Najważniejszą kwestią podczas wyboru systemu alarmowego jest sprecyzowanie potrzeb użytkownika. Nowoczesne centrale alarmowe posiadają wiele funkcji wbudowanych, a używając dodatkowych urządzeń może być ich jeszcze więcej. Za pomocą centrali możemy sterować oświetleniem, roletami antywłamaniowymi jak i bramą garażową- to tylko kilka z wielu możliwości. .</p>
+                    <p class="monit-font">{% trans 'Najważniejszą kwestią podczas wyboru systemu alarmowego jest sprecyzowanie potrzeb użytkownika. Nowoczesne centrale alarmowe posiadają wiele funkcji wbudowanych, a używając dodatkowych urządzeń może być ich jeszcze więcej. Za pomocą centrali możemy sterować oświetleniem, roletami antywłamaniowymi jak i bramą garażową- to tylko kilka z wielu możliwości.' %} .</p>
                 </blockquote>
             </div>
         </div>
 
         <div class="row pt-5 d-flex justify-content-center align-items-center">
             <div class="col-md-9">
-                <h2>Dostępność wielu modeli tak by dopasować je do potrzeb klienta:</h2>
+                <h2>{% trans 'Dostępność wielu modeli tak by dopasować je do potrzeb klienta:' %}</h2>
             </div>
         </div>
     </div>

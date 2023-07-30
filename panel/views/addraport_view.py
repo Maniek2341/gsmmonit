@@ -9,6 +9,7 @@ from django.urls import reverse_lazy
 from django.views import View
 
 from panel.forms import AddRaportForm
+from panel.models import SerwisRaport
 
 
 class AddRaportView(LoginRequiredMixin, View):
@@ -21,7 +22,7 @@ class AddRaportView(LoginRequiredMixin, View):
         return render(request, 'panel/raportyserwisowe/addraport.html', context)
 
     def post(self, request):
-        raport_form = AddRaportForm(request.POST)
+        raport_form = AddRaportForm(request.POST, request.FILES)
         raport_form.instance.pracownik = request.user
 
         context = {
@@ -31,6 +32,7 @@ class AddRaportView(LoginRequiredMixin, View):
         if raport_form.is_valid():
             form = raport_form.save()
             form.save()
+
             messages.success(request, json.dumps(
                 {
                     'body': "Pomyślnie dodano raport",

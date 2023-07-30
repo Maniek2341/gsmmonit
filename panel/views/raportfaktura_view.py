@@ -25,7 +25,7 @@ class RaportFakturaView(LoginRequiredMixin, View):
 
         messages.success(request, json.dumps(
             {
-                'body': "Pomyślnie zmieniono status na zafakturowane od klienta",
+                'body': "Pomyślnie zmieniono status na zafakturowane",
                 'title': "Zmieniono!"
             }
         ))

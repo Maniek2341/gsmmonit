@@ -9,7 +9,7 @@ from panel.models import SerwisRaport
 class RaportListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
     def get(self, request):
-        queryset = SerwisRaport.objects.all().order_by("-data_end")
+        queryset = SerwisRaport.objects.filter(status=1)
         context = {
             'raports': queryset,
         }

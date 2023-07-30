@@ -155,7 +155,7 @@ class AddRaportForm(forms.ModelForm):
             })
     )
 
-    robocizna = forms.IntegerField(
+    robocizna = forms.FloatField(
         widget=forms.NumberInput(
             attrs={
                 "placeholder": "Wpisz ilość godzin spedzonych na serwisie",
@@ -187,17 +187,80 @@ class AddRaportForm(forms.ModelForm):
             })
     )
 
-    zdjecia = forms.FileField(
+    zdjecie = forms.ImageField(
         required=False,
-        widget=forms.ClearableFileInput(
+        widget=forms.FileInput(
             attrs={
-                "placeholder": "Wybierz",
-                "class": "custom-file-input",
-                "multiple": True,
+                "class": "inputfile inputfile-4",
+                'id': 'file1',
+            })
+    )
+
+    zdjecie2 = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "class": "inputfile inputfile-4",
+                'id': 'file2',
+            })
+    )
+
+    zdjecie3 = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "class": "inputfile inputfile-4",
+                'id': 'file3',
+            })
+    )
+
+    zdjecie4 = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "class": "inputfile inputfile-4",
+                'id': 'file4',
+            })
+    )
+
+    zdjecie5 = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "class": "inputfile inputfile-4",
+                'id': 'file5',
+            })
+    )
+
+    zdjecie6 = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "class": "inputfile inputfile-4",
+                'id': 'file6',
+            })
+    )
+
+    zdjecie7 = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "class": "inputfile inputfile-4",
+                'id': 'file7',
+            })
+    )
+
+    zdjecie8 = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "class": "inputfile inputfile-4",
+                'id': 'file8',
             })
     )
 
     class Meta:
         model = SerwisRaport
-        fields = ['firma', 'data_end', 'wykonane_prace', 'robocizna', 'dojazd', 'rodzaj_prac', 'zdjecia', 'urzadzenia', 'pracownicy_szt']
+        fields = ['firma', 'data_end', 'wykonane_prace', 'robocizna', 'dojazd', 'rodzaj_prac', 'zdjecie', 'urzadzenia', 'pracownicy_szt', 'zdjecie2',
+                  'zdjecie3', 'zdjecie4', 'zdjecie5', 'zdjecie6', 'zdjecie7', 'zdjecie8']
         exclude = ['pracownik']

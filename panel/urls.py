@@ -1,6 +1,10 @@
+from django.template.defaulttags import url
 from django.urls import path
+from wkhtmltopdf.views import PDFTemplateView
+
 from panel.views import LoginView, ForgotView, DashboardView, LogoutView, AddKlientView, KlientListView, AddRaportView, DeleteKlientView, EditKlientView, \
-    RaportListView, RaportDetailView, DeleteRaportView, EditRaportView, RaportFakturaView
+    RaportListView, RaportDetailView, DeleteRaportView, EditRaportView, RaportFakturaView, MyPDF, FakturyWyslaneView, \
+    FakturyZafakturowaneView, GwarancjaView, RaportGwarancjaView, NoweRaportView
 
 urlpatterns = [
     path('login', LoginView.as_view(), name='login'),
@@ -17,4 +21,10 @@ urlpatterns = [
     path('raport/edit/<int:pk>', EditRaportView.as_view(), name="edit_raport"),
     path('raport/detail/<int:pk>', RaportDetailView.as_view(), name="detail_raport"),
     path('raport/faktura/<int:pk>', RaportFakturaView.as_view(), name="faktura_raport"),
+    path('pdf/<int:pk>', MyPDF.as_view(), name="pdf"),
+    path('faktury/wyslane', FakturyWyslaneView.as_view(), name="fakturywyslane"),
+    path('faktury/zafakturowane', FakturyZafakturowaneView.as_view(), name="fakturyzafakturowane"),
+    path('faktury/gwarancja', GwarancjaView.as_view(), name="gwarancja"),
+    path('faktury/gwarancja/<int:pk>', RaportGwarancjaView.as_view(), name="gwarancja-raport"),
+    path('faktury/nowe/<int:pk>', NoweRaportView.as_view(), name="nowe-raport"),
 ]

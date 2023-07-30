@@ -7,6 +7,7 @@
 
     <section class="content">
         <div class="container-fluid">
+            <a class="btn btn-sm btn-rounded btn-primary" style="margin-bottom: 5px;" href="{% url 'pdf' raport.pk %} " target="_blank">Pobierz PDF'a</a>
             <div class="row">
                 <div class="col-12">
                     {% if raport.rodzaj_prac == 1 %}
@@ -29,8 +30,8 @@
                 <table class="table table-bordered">
                   <tbody>
                       <tr>
-                          <th scope="col">Imię i nazwisko klienta</th>
-                          <td colspan="3">{{ raport.firma.imie|default:"Brak" }} {{ raport.firma.nazwisko|default:"" }}</td>
+                          <th scope="col">Klient</th>
+                          <td colspan="3">{{ raport.firma.nazwa_firmy|default:"Brak" }}</td>
                       </tr>
                       <tr>
                           <th scope="col">Adres</th>
@@ -63,10 +64,35 @@
                       </tr>
                       <tr>
                           <th>Robocizna</th>
-                          <td>{{ raport.robocizna }}h</td>
+                          <td>{{ raport.robocizna|floatformat }}h</td>
                           <th>Dojazd</th>
-                          <td>{{ raport.dojazd }}km</td>
+                          <td>{{ mapydojazd|floatformat }} km</td>
                       </tr>
+                      <tr>
+                      <th>Cena robocizna netto</th>
+                      <td>
+                          {% if raport.pracownicy_szt == 1 %}
+                          {{ robocizna }} zł
+                          {% elif raport.pracownicy_szt == 2 %}
+                          {{ robocizna2 }} zł
+                          {% endif %}
+                      </td>
+                      <th>Cena dojazd netto</th>
+                      <td>
+                          {{ dojazd }} zł
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>Razem netto</th>
+                      <td colspan="3">
+                          {% if raport.pracownicy_szt == 1 %}
+                          {{ razem1 }} zł
+                          {% elif raport.pracownicy_szt == 2 %}
+                          {{ razem2 }} zł
+                          {% endif %}
+                      </td>
+
+                  </tr>
                       <tr>
                           <th>Ilość pracowników</th>
                           <td>{{ raport.pracownicy_szt }}</td>
@@ -94,27 +120,77 @@
                           <span class="badge badge-primary">{{ raport.get_status_display }}</span>
                         {% elif raport.status == 3 %}
                           <span class="badge badge-success">{{ raport.get_status_display }}</span>
+                        {% elif raport.status == 4 %}
+                          <span class="badge badge-info">{{ raport.get_status_display }}</span>
                         {% endif %}
                       </td>
                   </tr>
+
                   </tbody>
                 </table>
+
 <div class="row pt-4">
-    <div class="col-sm-2 col-12 d-flex align-items-center justify-content-center">Zmień status na:</div>
-                              <div class="col-sm-4 col-12 d-flex align-items-center justify-content-center">
-                              <form method="POST" action="{% url 'faktura_raport' raport.pk %}">
-                              {% csrf_token %}
-                              <button type="submit" class="btn btn-sm btn-rounded btn-primary">Zafakturowane</button>
-                              </form>
-                              </div>
-                                  <div class="col-sm-2 col-12 d-flex align-items-center justify-content-center"><span>lub</span></div>
-                                  <div class="col-sm-4 col-12 d-flex align-items-center justify-content-center">
-                              <form method="POST" action="{% url 'detail_raport' raport.pk %}">
-                              {% csrf_token %}
-                              <button type="submit" class="btn btn-sm btn-rounded btn-success">Wysłane</button>
-                              </form>
-                          </div>
-                        </div>
+    <div class="col-sm-3 col-12 d-flex align-items-center justify-content-center p-2">
+      <form method="POST" action="{% url 'nowe-raport' raport.pk %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-sm btn-rounded btn-warning">Nowe</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3 col-12 d-flex align-items-center justify-content-center p-2">
+      <form method="POST" action="{% url 'faktura_raport' raport.pk %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-sm btn-rounded btn-primary">Zafakturowane</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3 col-12 d-flex align-items-center justify-content-center p-2">
+      <form method="POST" action="{% url 'detail_raport' raport.pk %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-sm btn-rounded btn-success">Zafakturowane + Wysłane</button>
+      </form>
+    </div>
+    <div class="col-sm-3 col-12 d-flex align-items-center justify-content-center p-2">
+      <form method="POST" action="{% url 'gwarancja-raport' raport.pk %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-sm btn-rounded btn-info">Gwarancja</button>
+      </form>
+    </div>
+</div>
+                <div class="row photos pt-3">
+                    {% if raport.zdjecie %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                    {% if raport.zdjecie2 %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie2.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie2.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                    {% if raport.zdjecie3 %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie3.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie3.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                    {% if raport.zdjecie4 %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie4.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie4.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                    {% if raport.zdjecie5 %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie5.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie5.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                    {% if raport.zdjecie6 %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie6.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie6.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                    {% if raport.zdjecie7 %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie7.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie7.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                    {% if raport.zdjecie8 %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ MEDIA_URL }}{{ raport.zdjecie8.url }}" data-lightbox="photos" target="_blank"><img class="img-fluid" src="{{ raport.zdjecie8.url }}"></a></div>
+                    {% else %}
+                    {% endif %}
+                </div>
               </div>
             </div>
                 </div>

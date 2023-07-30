@@ -12,3 +12,9 @@ from .raportdetail_view import RaportDetailView
 from .raportdelete_view import DeleteRaportView
 from .editraport_view import EditRaportView
 from .raportfaktura_view import RaportFakturaView
+from .generate_pfd_view import MyPDF
+from .fakturywyslane_view import FakturyWyslaneView
+from .fakturyzafakturowane_view import FakturyZafakturowaneView
+from .gwarancja_view import GwarancjaView
+from .raport_gwarancja import RaportGwarancjaView
+from .nowe_raport_view import NoweRaportView

@@ -1,0 +1,73 @@
+{% extends 'panel/base/base.html' %}
+{%load static%}
+{% block content %}
+<div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <section class="content-header">
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+              <div class="card-header">
+              <h3 class="card-title">Lista raportów obejmujących gwarancje</h3>
+              </div>
+
+              <div class="card-body">
+                <button type="button" class="btn btn-rounded btn-warning m-1 mb-2">
+                    <a style="color: black;" href="{% url 'list_raport' %}">Nowe</a>
+                  </button>
+                  <button type="button" class="btn btn-rounded btn-primary m-1 mb-2">
+                    <a style="color: black;" href="{% url 'fakturyzafakturowane' %}">Zafakturowane</a>
+                  </button>
+                  <button type="button" class="btn btn-rounded btn-success m-1 mb-2">
+                    <a style="color: black;" href="{% url 'fakturywyslane' %}">Wysłane + zafakturowane</a>
+                  </button>
+                  <button type="button" class="btn btn-rounded btn-info m-1 mb-2">
+                    <a style="color: black;" href="{% url 'gwarancja' %}">Gwarancja</a>
+                  </button>
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Firma</th>
+                      <th>Data wykonania</th>
+                      <th>Status</th>
+                      <th>Akcje</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for raport in raports %}
+                    <tr>
+                      <td>{{ raport.id }}</td>
+                      <td><a href="{% url 'detail_raport' raport.pk %}" style="color:black; font-weight:bold;">{{ raport.firma.nazwa_firmy }}</a></td>
+                      <td>{{ raport.data_end|default:"Brak" }}</td>
+                      <td>
+                        {% if raport.status == 1 %}
+                          <span class="badge badge-warning">{{ raport.get_status_display }}</span>
+                        {% elif raport.status == 2 %}
+                          <span class="badge badge-primary">{{ raport.get_status_display }}</span>
+                        {% elif raport.status == 3 %}
+                          <span class="badge badge-success">{{ raport.get_status_display }}</span>
+                        {% elif raport.status == 4 %}
+                          <span class="badge badge-info">{{ raport.get_status_display }}</span>
+                        {% endif %}
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                          <a href="{% url 'edit_raport' raport.pk %}"><i class="fa-solid fa-pen-to-square" style="color: #00ff2a;"></i></a>
+                        </button>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                          <a href="{% url 'delete_raport' raport.pk %}"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></a>
+                        </button>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

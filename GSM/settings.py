@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'panel.apps.PanelConfig',
+    'wkhtmltopdf'
 ]
 
 MIDDLEWARE = [
@@ -115,6 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -126,15 +128,16 @@ STATICFILES_DIRS = [
 ]
 
 EMAIL_USE_SSL = True  # use port 465
-EMAIL_HOST = 'smtp.wp.pl'
+EMAIL_HOST = 'poczta.o2.pl'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'klausmenpo@wp.pl'
-EMAIL_HOST_PASSWORD = 'klausmen1'
-DEFAULT_FROM_EMAIL = 'Kontakt | GSM-monit.com.pl <klausmenpo@wp.pl>'
+EMAIL_HOST_USER = 'gsmmonit@o2.pl'
+EMAIL_HOST_PASSWORD = '252525adm!@#$%'
+DEFAULT_FROM_EMAIL = 'Formularz kontaktowy | GSM-monit.com.pl <gsmmonit@o2.pl>'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'lang')
+    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'GSM/locale')  # app folder
 ]
 
 LANGUAGES = [
@@ -145,3 +148,7 @@ LANGUAGES = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "zdjecia")
 MEDIA_URL = "/zdjecia/"
+
+WKHTMLTOPDF_CMD = 'C:/Users/manie/Desktop/GSM/wkhtmltopdf/bin/wkhtmltopdf.exe'
+
+GOOGLE_API_KEY = 'AIzaSyBP0MbNceHAi5N0Li5YbbQIkcklzdqfv2Q'

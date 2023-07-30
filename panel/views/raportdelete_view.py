@@ -26,7 +26,7 @@ class DeleteRaportView(LoginRequiredMixin, View):
 
         messages.info(request, json.dumps(
             {
-                'body': "Pomyślnie usunięto raport od klienta %s" % raport.nazwa_firmy,
+                'body': "Pomyślnie usunięto raport od klienta %s" % raport.firma.nazwa_firmy,
                 'title': "Usunięto!"
             }
         ))

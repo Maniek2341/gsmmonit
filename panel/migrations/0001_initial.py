@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('imie', models.CharField(max_length=50)),
                 ('nazwisko', models.CharField(max_length=50)),
                 ('email', models.EmailField(max_length=254)),
-                ('nip', models.IntegerField()),
+                ('nip', models.BigIntegerField()),
                 ('ulica', models.CharField(max_length=50)),
                 ('kod_pocztowy', models.IntegerField()),
                 ('miejscowosc', models.CharField(max_length=50)),
@@ -35,13 +35,13 @@ class Migration(migrations.Migration):
             name='SerwisRaport',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('firma', models.ForeignKey('Klient', related_name="firma", on_delete=models.CASCADE, blank=False,null=False)),
                 ('data_start', models.DateTimeField()),
                 ('data_end', models.DateTimeField()),
                 ('wykonane_prace', models.TextField(max_length=250)),
                 ('robocizna', models.IntegerField()),
                 ('dojazd', models.IntegerField()),
                 ('rodzaj_prac', models.PositiveSmallIntegerField(choices=[(1, 'Naprawa'), (2, 'Rozbudowa'), (3, 'Montaż'), (4, 'Przegląd'), (5, 'Zgranie')], default=1)),
-                ('firma', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='firma', to='panel.klient')),
             ],
             options={
                 'verbose_name': 'Raport serwisowy',

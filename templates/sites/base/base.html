@@ -39,7 +39,7 @@
   <nav class="navbar pt-0 navbar-expand-xl navbar-dark fixed-top" style="height: 70px; background-color: #303030; box-shadow: 3px 3px 14px 0 #303030;">
     <div class="container-xl" id="container-mobile" style="background-color: #303030">
         <a class="navbar-brand justify-content-center mt-2" href="{% url 'main' %}">
-        <img class="img-responsive brand" src="{% static 'assets/img/logo-1.png' %}" height="50" alt="GSM-monit Logo"/>
+        <img class="img-responsive brand" src="{% static 'assets/img/logo-1.png' %}" height="50" alt="GSM-monit"/>
       </a>
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
@@ -177,9 +177,9 @@
                     <div class="row ">
                         <div class="col-lg-6 col-sm-12">
                             <div class="text-white ms-5" style="text-align: left">
-                              <h1 class="mb-3" id="banner-h1" style="color: orange;">Najlepsze rozwiazania CCTV i SSWiN na rynku!</h1>
-                              <h4 class="mb-3" id="banner-h4">Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.</h4>
-                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">Kontakt</a>
+                              <h1 class="mb-3" id="banner-h1" style="color: orange;">{% trans 'Najlepsze rozwiazania CCTV i SSWiN na rynku!' %}</h1>
+                              <h4 class="mb-3" id="banner-h4">{% trans 'Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.' %}</h4>
+                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">{% trans 'Kontakt' %}</a>
                             </div>
                         </div>
                     </div>
@@ -192,9 +192,9 @@
                     <div class="row ">
                         <div class="col-lg-6 col-sm-12">
                             <div class="text-white ms-5" style="text-align: left">
-                              <h1 class="mb-3" id="banner-h1" style="color: orange;">Najlepsze rozwiazania CCTV i SSWiN na rynku!</h1>
-                              <h4 class="mb-3" id="banner-h4">Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.</h4>
-                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">Kontakt</a>
+                              <h1 class="mb-3" id="banner-h1" style="color: orange;">{% trans 'Najlepsze rozwiazania CCTV i SSWiN na rynku!' %}</h1>
+                              <h4 class="mb-3" id="banner-h4">{% trans 'Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.' %}</h4>
+                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">{% trans 'Kontakt' %}</a>
                             </div>
                         </div>
                     </div>
@@ -207,9 +207,9 @@
                     <div class="row ">
                         <div class="col-lg-6 col-sm-12">
                             <div class="text-white ms-5" style="text-align: left">
-                              <h1 class="mb-3" id="banner-h1" style="color: orange;">Najlepsze rozwiazania CCTV i SSWiN na rynku!</h1>
-                              <h4 class="mb-3" id="banner-h4">Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.</h4>
-                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">Kontakt</a>
+                              <h1 class="mb-3" id="banner-h1" style="color: orange;">{% trans 'Najlepsze rozwiazania CCTV i SSWiN na rynku!' %}</h1>
+                              <h4 class="mb-3" id="banner-h4">{% trans 'Potrzebujesz monitoringu lub alarmu? Skontaktuj się z nami, a otrzymasz od nas darmową wycene.' %}</h4>
+                              <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'kontakt' %}" role="button">{% trans 'Kontakt' %}</a>
                             </div>
                         </div>
                     </div>
@@ -238,7 +238,7 @@
             <i class="fas fa-gem me-3"></i><span style="color: orange;">GSM</span>-monit
           </h6>
           <p>
-            Jesteśmy profesjonalną firmą zajmującą się montażem systemów monitoringu i alarmu w województwie Opolskim.
+            {% trans 'Jesteśmy profesjonalną firmą zajmującą się montażem systemów monitoringu i alarmu w województwie Opolskim.' %}
           </p>
         </div>
         <!-- Grid column -->
@@ -247,16 +247,16 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Oferta
+            {% trans 'Oferta' %}
           </h6>
           <p>
-            <a href="{% url 'monitoring-cctv' %}" class="text-reset">- Monitoring CCTV</a>
+            <a href="{% url 'monitoring-cctv' %}" class="text-reset">- {% trans 'Monitoring CCTV' %}</a>
           </p>
           <p>
-            <a href="{% url 'alarmy' %}" class="text-reset">- Systemy alarmowe</a>
+            <a href="{% url 'alarmy' %}" class="text-reset">- {% trans 'Systemy alarmowe' %}</a>
           </p>
           <p>
-            <a href="{% url 'domofony' %}" class="text-reset">- Domofony</a>
+            <a href="{% url 'domofony' %}" class="text-reset">- {% trans 'Domofony' %}</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -264,17 +264,17 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <p>
-            <a href="{% url 'elektryka' %}" class="text-reset">- Instalacje elektryczne</a>
+            <a href="{% url 'elektryka' %}" class="text-reset">- {% trans 'Instalacje elektryczne' %}</a>
           </p>
             <p>
-            <a href="{% url 'sieci' %}" class="text-reset">- Instalacje LAN</a>
+            <a href="{% url 'sieci' %}" class="text-reset">- {% trans 'Instalacje LAN' %}</a>
           </p>
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-2">
-            Przydatne linki
+            {% trans 'Przydatne linki' %}
           </h6>
           <p>
-            <a href="{% url 'polityka' %}" class="text-reset">- Polityka prywatności</a>
+            <a href="{% url 'polityka' %}" class="text-reset">- {% trans 'Polityka prywatności' %}</a>
           </p>
 
         </div>
@@ -286,7 +286,7 @@
           <h6 class="text-uppercase fw-bold mb-4">
             Kontakt
           </h6>
-          <p><i class="fas fa-home me-3"></i> ul. Stawowa 2, 46-060 Przysiecz</p>
+          <p><i class="fas fa-home me-3"></i> {% trans 'ul. Stawowa 2, 46-060 Przysiecz' %}</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
             biuro@gsm-monit.com.pl
@@ -303,7 +303,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    Copyright © 2022 |
+    Copyright © 2023 |
     <a class="text-reset fw-bold" href="http://zobin-it.pl" target="_blank"><span style="color: orange;">Zobin-IT</span> Damian Pielka</a>
   </div>
   <!-- Copyright -->

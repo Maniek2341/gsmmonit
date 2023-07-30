@@ -5,7 +5,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views import View
 
-from GSM.settings import DEFAULT_FROM_EMAIL
+from GSM.settings import DEFAULT_FROM_EMAIL, EMAIL_HOST_USER
 from website.forms import ContactForm
 
 
@@ -43,8 +43,8 @@ class KontaktView(View):
                 subject=form.temat,
                 message='',
                 from_email=DEFAULT_FROM_EMAIL,
-                recipient_list=['damianpielka@o2.pl'],
-                fail_silently=True,
+                recipient_list=['kontakt@zobin-it.pl'],
+                fail_silently=False,
                 html_message=message
             )
 

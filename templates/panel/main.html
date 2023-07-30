@@ -31,7 +31,7 @@
             <div class="icon">
             <i class="ion ion-bag"></i>
             </div>
-            <a href="" class="small-box-footer">Więcej szczegółów <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{% url 'list_klient' %}" class="small-box-footer">Więcej szczegółów <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <div class="col-lg-3 col-6">
@@ -56,7 +56,7 @@
             <h3 class="card-title">Ostatnie raporty serwisowe</h3>
         </div>
 
-        <div class="card-body">
+        <div class="card-body list-body">
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -68,7 +68,7 @@
                 <tbody>
                     {% for raport in ostatnieraporty %}
                     <tr>
-                        <td><a href="pages/examples/invoice.html">{{ raport.firma.nazwa_firmy }}</a></td>
+                        <td><a href="{% url 'detail_raport' raport.pk %}" style="color:black; font-weight:bold;">{{ raport.firma.nazwa_firmy }}</a></td>
                         <td>{{ raport.data_end }}</td>
                         <td>
                             {% if raport.rodzaj_prac == 1 %}

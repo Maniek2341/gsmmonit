@@ -9,19 +9,22 @@
 
     <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo-1.png' %}">
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="{% static 'assets/panel/select2/css/select2.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/panel/daterangepicker/daterangepicker.css' %}">
     <link rel="stylesheet" href="{% static 'assets/panel/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
-<link rel="stylesheet" href="{% static 'assets/panel/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
-<link rel="stylesheet" href="{% static 'assets/panel/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/panel/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/panel/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/panel/dropzone/min/dropzone.min.css' %}">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{% static 'assets/panel/fontawesome-free/css/all.min.css' %}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{% static 'assets/panel/dist/css/adminlte.min.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'assets/panel/fontawesome-free/css/all.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'assets/panel/dist/css/adminlte.min.css' %}">
 
-  <link href="{% static 'assets/panel/toastr/toastr.css' %}" rel="stylesheet"/>
+    <link href="{% static 'assets/panel/toastr/toastr.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/normalize.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/demo.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/component.css' %}" >
   <script>
         let messages = [];
         {% if messages %}
@@ -33,6 +36,32 @@
         {% endfor %}
         {% endif %}
     </script>
+<style>
+    .list-body {
+        padding: 0 !important;
+    }
+
+    .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+}
+</style>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -76,7 +105,7 @@
             <a href="{% url 'dashboard' %}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Strona Główna
               </p>
             </a>
           </li>
@@ -125,14 +154,20 @@
                     </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{% url 'add_klient' %}" class="nav-link">
+                        <a href="{% url 'fakturyzafakturowane' %}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i><p>Raporty zafakturowane</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'list_klient' %}" class="nav-link">
+                        <a href="{% url 'fakturywyslane' %}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Raporty wysłane</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'gwarancja' %}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Gwarancja</p>
                         </a>
                     </li>
                 </ul>
@@ -174,6 +209,8 @@
 <script src="{% static 'assets/panel/bootstrap-select/js/bootstrap-select.js' %}"></script>
 <!-- AdminLTE App -->
 <script src="{% static 'assets/panel/dist/js/adminlte.min.js' %}"></script>
+<script src="{% static 'assets/js/custom-file-input.js' %}"></script>
+
 <script>
     toastr.options = {
       "closeButton": true,
